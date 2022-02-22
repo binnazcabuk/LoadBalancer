@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api_01:
+    image: api1_image
+    build:
+      context: .
+      dockerfile: APIProject/Dockerfile     
+  api_02:
+    image: api2_image
+    build:
+      context: .
+      dockerfile: APIProject/Dockerfile   
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+   

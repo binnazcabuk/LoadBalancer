@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api_01:
+      container_name: api_01
+      environment:
+       - data='API1'
+      ports:
+      - "5011:1453"
+  api_02:
+      container_name: api_02
+      environment:
+       - data='API2'
+      ports:
+      - "5012:1453"   
+  api:
+      container_name: api
+      ports:
+      - "5040:80"
+      depends_on:
+      - api_01
+      - api_02
